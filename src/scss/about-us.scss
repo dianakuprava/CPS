@@ -1,0 +1,130 @@
+@import "variables";
+
+.about-us {
+  margin-bottom: 35px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    padding-left: 24px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-left: 34px;
+  }
+
+  &__text-content {
+    margin: 16px;
+    margin-top: 0;
+
+    @media (min-width: 768px) {
+      margin-left: 0;
+      margin-right: 48px;
+      margin-top: 0;
+    }
+
+    @media (min-width: 1440px) {
+      margin-right: 36px;
+    }
+  }
+
+  &__text {
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    overflow: hidden;
+    color: $textColor;
+    transition: height 0.3s ease;
+    height: 90px;
+
+    @media (min-width: 768px) {
+      height: 145px;
+      line-height: 20px;
+    }
+
+    @media (min-width: 1440px) {
+      height: 160px;
+    }
+  }
+
+  &__text--expand {
+    height: auto;
+  }
+
+  &__text:last-child {
+    margin-bottom: 10px;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: 24px;
+    flex-shrink: 0;
+    width: 320px;
+    border: 2px solid $bgPrimary;
+
+    @media (min-width: 768px) {
+      align-self: flex-start;
+      height: 208px;
+      width: 360px;
+      border: none;
+    }
+
+    @media (min-width: 1440px) {
+      height: 307px;
+      width: 531.35px;
+      border: none;
+    }
+  }
+
+  .page-main__about-us {
+    margin-bottom: 35px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+      display: flex;
+      gap: 48px;
+    }
+
+    @media (min-width: 1440px) {
+      gap: 36px;
+    }
+  }
+
+  .directions-link {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'TTLakes-Medium', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-decoration: none;
+    margin-top: 16px;
+    color: $textColor;
+    border: none;
+    background-color: $mainBg;
+
+    @media (min-width: 768px) {
+      margin-top: 10px;
+    }
+
+    @media (min-width: 1440px) {
+      margin-top: 13.78px;
+    }
+  }
+
+  .directions-link::before {
+    content: '';
+    display: inline-block;
+    width: 7.41px;
+    height: 10.29px;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    background-image: url('../img/readmore.svg');
+  }
+
+  .directions-link--reverse::before {
+    transform: rotate(180deg);
+  }
+}

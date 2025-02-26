@@ -1,0 +1,124 @@
+@import "variables";
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18.59px 16px 17.59px;
+  border-bottom: 1px solid $shadowColor;
+
+  @media (min-width: 1440px) {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    padding: 18.59px 24px 17.59px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+
+    @media (min-width: 768px) {
+      &::before {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 32px;
+        margin-right: 20.73px;
+        background-color: $separatorColor;
+      }
+    }
+  }
+
+  &__social-buttons {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+  }
+
+  &__account-menu::before {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 32px;
+    background-color: $separatorColor;
+  }
+}
+
+.logo {
+  min-width: 96.55px;
+}
+
+.account-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 16px;
+
+  @media (min-width: 1440px) {
+    gap: 32px;
+  }
+}
+
+.round-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background-color: $btnColor;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  font-size: 0;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    filter: opacity(65%);
+    background-color: $btnColor;
+  }
+
+  &--burger {
+    background-image: url('../img/icon.svg');
+    background-position: 11px 12px;
+  }
+
+  @media (min-width: 768px) {
+    &--burger {
+      gap: 20px;
+    }
+
+    &--call {
+      background-image: url("../img/call.svg");
+      background-position: 11.04px 11.04px;
+    }
+
+    &--chat {
+      background-image: url("../img/Chat.svg");
+      background-position: 10px 11px;
+    }
+
+    &--profile {
+      background-image: url("../img/profile.svg");
+      background-position: 10px 10px;
+    }
+  }
+
+  &--order {
+    background-image: url('../img/order.svg');
+    background-position: 10px 10px;
+  }
+
+  &--status {
+    background-image: url('../img/status.svg');
+    background-position: 12px 10px;
+  }
+}
+

@@ -1,0 +1,102 @@
+@import "variables";
+
+.brands--devices {
+  margin-top: 32px;
+
+  &::after {
+    height: 166px;
+  }
+
+  .swiper-pagination {
+    position: static;
+    margin-top: 16px;
+    text-align: center;
+    z-index: 10;
+  }
+
+  @media (min-width: 768px) {
+    .swiper-pagination {
+      display: none !important;
+    }
+
+    .swiper-wrapper {
+      flex-wrap: wrap;
+      overflow: visible !important;
+    }
+
+    .swiper-slide:nth-child(n+7) {
+      display: none !important;
+    }
+
+    .swiper-wrapper.expanded .swiper-slide {
+      display: flex !important;
+    }
+
+    .directions-link--show-more {
+      display: inline-flex;
+      align-items: center;
+      font-family: 'TTLakes-Medium', sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      text-decoration: none;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      color: $textColor;
+      border: none;
+      background-color: $mainBg;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 7.41px;
+        height: 10.29px;
+        margin-right: 17.29px;
+        background-repeat: no-repeat;
+        background-image: url('../img/readmore.svg');
+      }
+
+      &.directions-link--reverse::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .expanded .swiper-slide {
+    display: flex !important;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: $paginationBulletColor;
+    opacity: 1;
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    transition: background-color 0.3s ease;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    transform: scale(1);
+    background-color: $paginationActiveColor;
+  }
+
+  .swiper-slide--devices {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 16px;
+    min-height: 160px;
+  }
+
+  .brands__header {
+    font-size: 16px;
+    font-weight: lighter;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+  }
+}
+
+.brands .round-icon--devices {
+  align-self: flex-end;
+}
+

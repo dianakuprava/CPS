@@ -1,0 +1,141 @@
+@import "variables";
+
+.feedback-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 500;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.96);
+}
+
+.feedback {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 500;
+  width: 320px;
+  height: 100vh;
+  background-color: $bgPrimary;
+  transition: right 300ms;
+  overflow: visible;
+
+  &--open {
+    display: block;
+  }
+
+  @media (min-width: 1440px) {
+    width: 440px;
+    border-left: 1px solid $shadowColor;
+    box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
+  }
+
+  &__title {
+    margin-top: 104px;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    font-family: TTLakes-Bold, sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+
+    @media (min-width: 1440px) {
+      padding-left: 30px;
+      margin-top: 40px;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 4px;
+      height: 40px;
+      left: 0;
+      top: 96px;
+      background-image: url('../img/callback.svg');
+
+      @media (min-width: 1440px) {
+        top: 32px;
+      }
+    }
+  }
+
+  &__form {
+    margin-left: 16px;
+    margin-right: 16px;
+
+    @media (min-width: 1440px) {
+      margin-left: 32px;
+      margin-right: 32px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      font-family: 'TTLakes-Regular', sans-serif;
+      font-weight: lighter;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: $textInput;
+      border: 1px solid $separatorColor;
+      border-radius: 8px;
+    }
+
+    textarea {
+      height: 118px;
+    }
+  }
+
+  &__form-text {
+    margin-bottom: 16px;
+    font-family: TTLakes-Medium, sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+    line-height: 16px;
+    color: $textSecondary;
+  }
+
+  &__form a {
+    text-decoration: none;
+    color: $btnColor;
+  }
+
+  &__close {
+    margin: 0;
+    position: absolute;
+    top: 24px;
+    left: 16px;
+
+    @media (min-width: 1440px) {
+      top: 32px;
+      left: -72px;
+    }
+  }
+}
+
+.round-icon--feedback {
+  margin-left: auto;
+  margin-top: 19px;
+
+  @media (min-width: 1440px) {
+    margin-top: 23px;
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $bgPrimary;
+  opacity: 96.05%;
+  z-index: 499;
+}

@@ -1,0 +1,174 @@
+@import "variables";
+
+.brands--prices {
+  .prices__table {
+    display: block;
+    padding-right: 8px;
+    background-color: transparent;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      display: table;
+      width: calc(100% - 32px);
+      margin-right: auto;
+      font-size: 14px;
+      border-collapse: collapse;
+    }
+  }
+
+  thead {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: table-header-group;
+      padding: 16px;
+      color: $textSecondary;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    display: flex;
+
+    @media (min-width: 768px) {
+      display: table-row-group;
+      background-color: $bgPrimary;
+      border-left: 16px solid $bgPrimary;
+      border-right: 16px solid $bgPrimary;
+      border-radius: 6px;
+    }
+  }
+
+  .prices__table-row {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 260px;
+    min-height: 220px;
+    padding: 16px;
+    margin-right: 16px;
+    background-color: $bgPrimary;
+    border-radius: 6px;
+
+    @media (min-width: 768px) {
+      display: table-row;
+      border-bottom: 1px solid $separatorColor;
+      background-color: transparent;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .prices__table-item {
+    display: block;
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+
+    @media (min-width: 768px) {
+      display: table-cell;
+      padding-top: 23px;
+      padding-left: 16px;
+      padding-bottom: 23px;
+
+      &:last-child {
+        position: static;
+        text-align: right;
+        padding-right: 8px;
+      }
+
+      &::before {
+        display: none !important;
+      }
+    }
+
+    &:nth-child(1)::before {
+      content: 'Ремонтные услуги';
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+      line-height: 16px;
+      color: $textSecondary;
+    }
+
+    &:nth-child(2)::before {
+      content: 'Цена';
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+      line-height: 16px;
+      color: $textSecondary;
+    }
+
+    &:nth-child(3)::before {
+      content: 'Срок';
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+      line-height: 16px;
+      color: $textSecondary;
+    }
+
+    &:last-child {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      padding-right: 0;
+
+      @media (min-width: 768px) {
+        position: static;
+        margin-top: 12px;
+        align-self: flex-end;
+        padding-right: 3px;
+        text-align: right;
+      }
+    }
+  }
+
+  .round-icon--prices {
+    width: 119px;
+    height: 32px;
+    margin-left: 0;
+    font-family: TTLakes-Bold, sans-serif;
+    padding: 4px 12px;
+    background: $btnColor;
+    border-radius: 16px;
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    border: none;
+
+    @media (min-width: 768px) {
+      position: static;
+      margin-left: auto;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 17px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 9.63px;
+      background-image: url('../img/white-arrow.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @media (min-width: 768px) {
+        right: 27px;
+      }
+    }
+  }
+}
+

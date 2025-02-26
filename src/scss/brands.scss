@@ -1,0 +1,211 @@
+@import "variables";
+
+.brands {
+  border-top: 1px solid $shadowColor;
+  background-color: $mainBg;
+  position: relative;
+  margin-left: 16px;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 93px;
+    width: 24px;
+    height: 81px;
+    pointer-events: none;
+    z-index: 100;
+    right: 0;
+    background: linear-gradient(to left, rgba(248, 248, 248, 1), rgba(248, 248, 248, 0.0001));
+  }
+
+  &--devices::after {
+    height: 166px;
+  }
+
+  &--prices::after {
+    top: 80px;
+    height: 200px;
+  }
+
+  @media (min-width: 768px) {
+    margin-left: 24px;
+
+    &::after,
+    &--devices::after,
+    &--prices::after {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    margin-left: 32px;
+  }
+
+  &__title {
+    display: block;
+    background-image: linear-gradient(to right, $mainBg, $bgPrimary);
+    color: $textSecondary;
+    font-size: 16px;
+    font-weight: lighter;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    padding: 16px;
+    padding-left: 0;
+    margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: inherit;
+    height: 72px;
+    width: 240px;
+
+    @media (max-width: 768px) {
+      width: 224px;
+      gap: 16px 24px;
+    }
+
+    @media (min-width: 1440px) {
+      width: 240px;
+      gap: 16px 32px;
+    }
+  }
+}
+
+.swiper {
+  overflow: visible;
+  margin-bottom: 38px;
+
+  &-container {
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  &-wrapper {
+    display: flex;
+
+    .expanded & {
+      flex-wrap: wrap;
+      overflow: visible;
+      height: auto;
+    }
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+      grid-row-gap: 16px;
+
+      &.expanded {
+        flex-wrap: wrap;
+        overflow: visible;
+        height: auto;
+      }
+    }
+
+    @media (min-width: 1440px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bgPrimary;
+    border-radius: 6px;
+    border: 1px solid $separatorColor;
+    box-sizing: border-box;
+    height: 72px;
+    width: 240px;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-right: 16px;
+    flex: 0 0 auto;
+
+    @media (min-width: 768px) {
+      width: 224px;
+
+      &:nth-child(n+7) {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1120px) {
+      width: 240px;
+    }
+  }
+
+  &-pagination {
+    position: static;
+    margin-top: 16px;
+    text-align: center;
+    z-index: 10;
+    display: block;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    &-bullet {
+      background-color: $paginationBulletColor;
+      opacity: 1;
+      width: 12px;
+      height: 12px;
+      margin: 0;
+      transition: background-color 0.3s ease;
+
+      &.swiper-pagination-bullet-active {
+        transform: scale(1);
+        background-color: $paginationActiveColor;
+      }
+    }
+  }
+}
+
+.brands .round-icon--arrow {
+  background-color: $bgPrimary;
+  border: 2px solid $btnColor;
+  cursor: pointer;
+  background-image: url("../img/dropdown.svg");
+  background-position: center center;
+}
+
+.directions-link--show-more {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'TTLakes-Medium', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-decoration: none;
+    margin-top: 24px;
+    color: $textColor;
+    border: none;
+    background-color: $mainBg;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 7.41px;
+      height: 10.29px;
+      margin-right: 17.29px;
+      background-repeat: no-repeat;
+      background-image: url('../img/readmore.svg');
+    }
+
+    &.directions-link--reverse::before {
+      transform: rotate(180deg);
+    }
+  }
+}

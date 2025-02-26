@@ -1,0 +1,125 @@
+@import "variables";
+
+.callback {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 500;
+  width: 320px;
+  height: 100vh;
+  padding-top: 100px;
+  background-color: $bgPrimary;
+  transition: right 500ms;
+  overflow: visible;
+
+  &--open {
+    display: block;
+  }
+
+  @media (min-width: 1440px) {
+    & {
+      width: 440px;
+      padding-top: 32px;
+      border-left: 1px solid $shadowColor;
+      box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
+    }
+  }
+}
+
+.callback__title {
+  padding-left: 16px;
+  margin: 0;
+  font-family: 'TTLakes-Bold', sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+
+  @media (min-width: 1440px) {
+    & {
+      padding-left: 30px;
+    }
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    left: 0;
+    top: 96px;
+    background-image: url('../img/callback.svg');
+  }
+}
+
+.callback__form {
+  margin-top: 24px;
+  margin-left: 16px;
+  margin-right: 16px;
+
+  @media (min-width: 1440px) {
+    & {
+      margin-left: 32px;
+      margin-right: 32px;
+    }
+  }
+}
+
+.callback-form__phone-number {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-family: 'TTLakes-Regular', sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: $paginationActiveColor;
+  border: 1px solid $separatorColor;
+  border-radius: 8px;
+}
+
+.callback-form__text {
+  font-weight: lighter;
+  font-size: 14px;
+  line-height: 16px;
+  color: $textSecondary;
+  margin-bottom: 18px;
+
+  @media (min-width: 1440px) {
+    & {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.callback__form a {
+  text-decoration: none;
+  color: $btnColor;
+}
+
+.round-icon--callback {
+  position: relative;
+  width: 136px;
+  text-align: center;
+  padding: 4px 38.86px 4px 20px;
+  margin-left: auto;
+
+  &::after {
+    right: 12.57px;
+  }
+}
+
+.callback__close {
+  position: absolute;
+  top: 24px;
+  left: 16px;
+
+  @media (min-width: 1440px) {
+    & {
+      top: 32px;
+      left: -72px;
+    }
+  }
+}
